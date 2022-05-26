@@ -16,8 +16,24 @@
 <body>
     <div class="container">
         <div class="container__inner" id="js-container">
-            
         </div>
+
+        <div class="panel">
+            <div class="panel__inner panel__controls">
+                <input class="panel__controls__name" id="js-name" type="text" placeholder="Name">
+                <button class="panel__controls__start" id="js-start" onclick="startGame()">START <i class="panel__controls__start__icon fas fa-sync-alt" id="js-refresh"></i></button>
+
+                <span class="panel__controls__timer" id="js-timer">30</span>
+
+            </div>
+
+            <div class="panel__inner panel__leaderboard">
+                <div class="panel__leaderboard__list" id="js-leaderboard">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <script src="assets/src/main.js"></script>
 </body>

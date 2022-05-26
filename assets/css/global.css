@@ -77,3 +77,127 @@ body{
     -o-user-select: none;
     user-select: none;
 }
+
+
+.panel{
+    width: 100%;
+    margin-left: 64px;
+    flex-grow: 1;
+    display: flex;
+}
+
+.panel__inner {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    /* box-shadow: 0px 0px 20px 3px #ffffff27; */
+    /* border-radius: 12px; */
+
+
+    border-radius: 50px;
+    border-radius: 16px;
+    background: black;
+    box-shadow: inset 10px 10px 20px #101010,
+                inset -10px -10px 20px #000000;
+}
+
+.panel__leaderboard{
+    display: block;
+    margin-left: 32px;
+    border: 1px solid #00F1BB;
+    padding: 24px 24px;
+    box-sizing: border-box;
+}
+
+
+
+.panel__leaderboard__list{
+    display: flex;
+    flex-direction: column;
+    height: 542px;
+    overflow-y: scroll;
+}
+
+.panel__leaderboard__list__item{
+    display: flex;
+    flex-direction: row;
+}
+
+.panel__leaderboard__list__item__icon{
+    width: 80px;
+
+}
+
+.panel__leaderboard__list__item__text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-top: 12px;
+    color: white;
+    font-family: 'Arvo', sans-serif;
+}
+
+.panel__leaderboard__list__item__text__name{
+    font-size: 1.9em;
+}
+
+
+.panel__controls {
+    display: block;
+    border: 1px solid #F7013B;
+}
+
+.panel__controls__name{
+    display: flex;
+    background-color: white;
+    font-family: 'Arvo', sans-serif;
+    font-size: 2em;
+    color: black;
+    border: none;
+    outline: none;
+    padding: 8px 32px;
+    margin: 0 auto;
+    margin-top: 64px;
+    cursor: pointer;
+    border: 1px solid #F7013B;
+    max-width: 200px;
+}
+
+.panel__controls__start{
+    display: flex;
+    background-color: #FF003D;
+    font-family: 'Arvo', sans-serif;
+    font-size: 2em;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 8px 32px;
+    margin: 0 auto;
+    margin-top: 64px;
+    cursor: pointer;
+}
+
+.panel__controls__start:hover {
+    filter: invert(1);
+}
+
+.panel__controls__start[disabled] {
+    background: grey;
+}
+
+.panel__controls__start__icon{
+    color: white;
+    font-size: 0.6em;
+    margin-left: 10px;
+    align-self: center;
+}
+
+.panel__controls__timer{
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: white;
+    font-size: 6.5em;
+    font-family: 'Arvo', sans-serif;
+    margin-top: 64px;
+}
