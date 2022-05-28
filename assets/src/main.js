@@ -6,6 +6,8 @@ const timer       = document.getElementById('js-timer');
 const refresh     = document.getElementById('js-refresh');
 const startButton = document.getElementById('js-start');
 const name        = document.getElementById('js-name');
+const leaderboard = document.getElementById('js-leaderboard');
+
 
 let timerInterval = false;
 let flipped       = [];
@@ -94,6 +96,32 @@ function updateStorage(leaderboard) {
     localStorage.setItem('leaderboard', JSON.stringify(storage));
 }
 
+function updateLeaderboard() {
+    leaderboard.innerHTML = '';
+
+    let storage = getStorage();
+
+    storage.sort((a, b) => parseFloat(a.score) - parseFloat(b.score));
+    storage = storage.slice(0, 10);    
+
+    for(let [index, item] of storage.entries()) {
+        console.log(index+1);
+
+        let leaderboardItem = `
+        <div class="panel__leaderboard__list__item">
+        <img class="panel__leaderboard__list__item__icon" src="assets/images/` + parseInt(index+1) + `.svg" alt="first">
+        <div class="panel__leaderboard__list__item__text">
+            <span class="panel__leaderboard__list__item__text__name">`+ item.name +`</span>
+            <span class="panel__leaderboard__list__item__text__score">`+ item.score +` seconds</span>
+        </div>
+    </div>
+        `;
+    leaderboard.innerHTML += leaderboardItem;
+
+    }
+}
+
+// Call function on game complete
 
   
 
@@ -203,6 +231,9 @@ function flipCard(card){
 }
 
 setupCards();
+
+updateLeaderboard();
+
 
 
 
