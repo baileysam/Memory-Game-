@@ -56,12 +56,55 @@ function checkGame() {
             completed = false;
         }
     }
+
+    if (completed === true) {
+        let leaderboardItem = {
+            name: name.value,
+            score: getScore()
+        };
+        
+        updateStorage(leaderboardItem);
+    }
 }
+
+function setupStorage(){
+    let storage = localStorage.getItem('leaderboard')
+
+    if(storage === null) {
+        localStorage.setItem('leaderboard', '[]');
+    }
+}
+
+function getStorage() {
+    return JSON.parse(localStorage.getItem('leaderboard'));
+}
+
+/**
+ * Adds the specified leaderboard item to localStorage
+ * 
+ * @param leaderboard The object to add to localStorage
+ * 
+ * @returns void
+ */
+function updateStorage(leaderboard) {
+    let storage = getStorage();
+
+    storage.push(leaderboard);
+
+    localStorage.setItem('leaderboard', JSON.stringify(storage));
+}
+
+
+  
+
+
 function getScore() {
     return startSeconds - seconds;
 }
 
 function startGame(){
+    setupStorage();
+    updateLeaderboard();
     setupCards();
 
     started = false;

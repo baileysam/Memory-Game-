@@ -1,0 +1,29 @@
+@keyframes embiggen {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes flash {
+    0% {
+        color: #FF003D;
+    }
+    100% {
+        color: white;
+    }
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
