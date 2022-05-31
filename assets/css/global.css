@@ -107,6 +107,8 @@ body{
     border: 1px solid #00F1BB;
     padding: 24px 24px;
     box-sizing: border-box;
+    overflow-y: scroll;
+    
 }
 
 
@@ -115,7 +117,6 @@ body{
     display: flex;
     flex-direction: column;
     height: 542px;
-    overflow-y: scroll;
 }
 
 .panel__leaderboard__list__item{
@@ -200,4 +201,16 @@ body{
     font-size: 6.5em;
     font-family: 'Arvo', sans-serif;
     margin-top: 64px;
+}
+
+.big{
+    animation: embiggen 0.5s ease-out;
+}
+
+.flash{
+    animation: flash 0.7s ease-out infinite;
+}
+
+.spin{
+    animation: spin 0.9s ease-out;
 }
